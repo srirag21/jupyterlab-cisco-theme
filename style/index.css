@@ -1,0 +1,38 @@
+@import url('./variables.css');
+
+/* Set the default typography for monospace elements */
+tt,
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  line-height: var(--jp-code-line-height);
+}
+
+
+.my-apodWidget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+
+#jp-MainLogo {
+  background: none;
+}
+
+#jp-MainLogo svg {
+  display: none;
+}
+
+#jp-MainLogo:before {
+  content: "";
+  display: inline-block;
+  width: 39px; 
+  height: 51px;
+  background: url('../cisco.png') no-repeat center center;
+  background-size: contain;
+}

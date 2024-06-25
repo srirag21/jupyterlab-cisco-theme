@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.3.2
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: srirag@cisco.com
+author_name: Srinidhi Raghavendran
+has_binder: true
+has_settings: false
+kind: theme
+labextension_name: cisco_theme_jupyter
+project_short_description: A JupyterLab extension for Cisco-based notebooks
+python_name: cisco_theme_jupyter
+repository: https://github.com/srirag21/jupyterlab-cisco-theme
+test: true
+
