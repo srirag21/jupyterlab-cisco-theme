@@ -31,8 +31,8 @@ pre {
 #jp-MainLogo:before {
   content: "";
   display: inline-block;
-  width: 39px; 
-  height: 51px;
+  width: 100px; /* Max out size of image*/
+  height: 100px; /* Max out size of image*/
   background: url('../cisco.png') no-repeat center center;
   background-size: contain;
 }
