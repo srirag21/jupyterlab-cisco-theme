@@ -22,21 +22,19 @@ RUN echo "source activate jupyterlab_env" > ~/.bashrc
 
 RUN /bin/bash -c "source activate jupyterlab_env && pip install -i https://test.pypi.org/simple/ cisco-theme-jupyter==1.0.0"
 
-# Copy the overrides.json file to a temporary location
+# Ensure the settings directory exists and copy the overrides.json file
 COPY overrides.json /app/overrides.json
-
-# Move the overrides.json file to the correct location using a RUN command
-RUN JUPYTER_OVERRIDES_DIR=$(python -c 'import sys; print(f"{sys.prefix}/share/jupyter/lab/settings")') \
-    && mkdir -p $JUPYTER_OVERRIDES_DIR \
-    && mv /app/overrides.json $JUPYTER_OVERRIDES_DIR/overrides.json
+RUN mkdir -p /opt/conda/envs/jupyterlab_env/share/jupyter/lab/settings \
+    && cp /app/overrides.json /opt/conda/envs/jupyterlab_env/share/jupyter/lab/settings/overrides.json
 
 # Copy the rest of the application code
 COPY . /app/
 
-# Ensure the start script is executable
-COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
+# Initialize Conda and activate the environment in the entrypoint
+RUN echo 'source /opt/conda/etc/profile.d/conda.sh' >> ~/.bashrc \
+    && echo 'conda activate jupyterlab_env' >> ~/.bashrc
 
 EXPOSE 8888
 
-ENTRYPOINT ["/app/start.sh"]
+# Start JupyterLab as the container entrypoint
+ENTRYPOINT ["/bin/bash", "-c", "source /opt/conda/etc/profile.d/conda.sh && conda activate jupyterlab_env && exec jupyter lab --ip=0.0.0.0 --port=8887 --allow-root --ServerApp.token='' --ServerApp.allow_origin='*' --ServerApp.allow_remote_access=True"]

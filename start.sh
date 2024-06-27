@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# Initialize Conda for the current shell session
+source /opt/conda/etc/profile.d/conda.sh
+
 # Activate the Conda environment
-source activate jupyterlab_env
+conda activate jupyterlab_env
 
 # Start JupyterLab
-exec jupyter lab --ip=0.0.0.0 --port=8887 --allow-root --no-browser
+exec jupyter lab --ip=0.0.0.0 --port=8887 --allow-root
