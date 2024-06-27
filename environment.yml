@@ -1,0 +1,10 @@
+name: jupyterlab_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - nodejs=20 
+  - jupyterlab=4.2.3
+  - pip
+  - pip:
+    # - jupyter-ai
