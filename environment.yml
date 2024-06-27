@@ -2,6 +2,7 @@ name: jupyterlab_env
 channels:
   - conda-forge
 dependencies:
+  - pydantic-settings
   - python=3.8
   - nodejs=20
   - jupyterlab
@@ -11,3 +12,4 @@ dependencies:
       - pyats
       - genie
       - meraki
+      - jupyter-ai==2.18.1
