@@ -1,6 +1,6 @@
 {
     "name": "cisco_theme_jupyter",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A JupyterLab extension for Cisco-based notebooks",
     "keywords": [
         "jupyter",

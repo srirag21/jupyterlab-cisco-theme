@@ -17,7 +17,7 @@ WORKDIR /app
 RUN conda env create -f environment.yml
 RUN echo "source activate jupyterlab_env" > ~/.bashrc
 
-RUN /bin/bash -c "source activate jupyterlab_env && pip install -i https://test.pypi.org/simple/ cisco-theme-jupyter==1.0.0"
+RUN /bin/bash -c "source activate jupyterlab_env && pip install -i https://test.pypi.org/simple/ cisco-theme-jupyter==1.0.1"
 
 COPY overrides.json /app/overrides.json
 RUN mkdir -p /opt/conda/envs/jupyterlab_env/share/jupyter/lab/settings \
