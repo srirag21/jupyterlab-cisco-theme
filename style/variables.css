@@ -253,9 +253,9 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-success-color2: var(--md-green-300);
   --jp-success-color3: var(--md-green-100);
   --jp-info-color0: var(--md-cyan-700);
-  --jp-info-color1: var(--md-cyan-600);
-  --jp-info-color2: var(--md-cyan-500);
-  --jp-info-color3: var(--md-cyan-400);
+  --jp-info-color1: var(--md-cyan-500);
+  --jp-info-color2: var(--md-cyan-300);
+  --jp-info-color3: var(--md-cyan-100);
 
   /* Cell specific styles */
 
@@ -277,7 +277,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   /* A custom blend of MD grey and blue 600
    * See https://meyerweb.com/eric/tools/color-blend/#546E7A:1E88E5:5:hex */
-  --jp-cell-inprompt-font-color: #307fc1;
+  --jp-cell-inprompt-font-color: #436d8e;
 
   /* A custom blend of MD grey and orange 600
    * https://meyerweb.com/eric/tools/color-blend/#546E7A:F4511E:5:hex */
@@ -302,15 +302,14 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   /* Rendermime styles */
 
-  --jp-rendermime-error-background: rgb(255, 255, 255);
+  --jp-rendermime-error-background: white;
+  --jp-rendermime-error-font-color: #000000;
   --jp-rendermime-table-row-background: var(--md-grey-100);
   --jp-rendermime-table-row-hover-background: var(--md-light-blue-50);
 
   /* Dialog specific styles */
 
-  /* --jp-dialog-background: rgba(0, 0, 0, 0.25); */
-  --jp-dialog-background: white;
-
+  --jp-dialog-background: rgba(0, 0, 0, 0.25);
 
   /* Console specific styles */
 
@@ -410,6 +409,30 @@ all of MD as it is not optimized for dense, information rich UIs.
   /* Sidebar-related styles */
 
   --jp-sidebar-min-width: 180px;
+
+  --ansi-red: #ff0000; /* Adjust to your preferred color */
+  --ansi-green: #00ff00; /* Adjust to your preferred color */
+  --ansi-bold: #000000; /* Adjust to your preferred color */
+  --ansi-blue: #0000ff;
+  --ansi-gray: #494949;
+
+}
+
+.jp-RenderedText pre span.ansi-red-fg {
+  color: var(--ansi-red) !important;
+}
+
+.jp-RenderedText pre span.ansi-green-fg {
+  color: var(--ansi-green) !important;
+}
+
+.jp-RenderedText pre span.ansi-bold {
+  color: var(--ansi-bold) !important;
+  font-weight: bold !important;
+}
+
+.jp-RenderedText pre span.ansi-blue-fg {
+  color: var(--ansi-blue) !important;
 }
 
 
@@ -432,4 +455,12 @@ all of MD as it is not optimized for dense, information rich UIs.
   color: var(--jp-input-font-color) !important;
   border-color: var(--jp-input-border-color) !important;
   box-shadow: var(--jp-input-box-shadow) !important;
+}
+
+.jp-RenderedText pre span.ansi-gray-fg {
+  color: var(--ansi-gray) !important;
+}
+
+.jp-RenderedText.jp-mod-trusted.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"] pre {
+  color: var(--jp-rendermime-error-font-color) !important;
 }
