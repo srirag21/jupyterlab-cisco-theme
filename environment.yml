@@ -12,4 +12,4 @@ dependencies:
       - pyats
       - genie
       - meraki
-      - jupyter-ai==2.18.1
+      # - jupyter-ai==2.18.1

@@ -33,18 +33,7 @@ if [ $? -eq 0 ]; then
         
         sleep 5
 
-        if command -v open &> /dev/null
-        then
-            open http://127.0.0.1:8887  
-        elif command -v xdg-open &> /dev/null
-        then
-            xdg-open http://127.0.0.1:8887 
-        elif command -v start &> /dev/null
-        then
-            start http://127.0.0.1:8887 
-        else
-            echo "No supported browser opening command found."
-        fi
+        echo "You can access your environment at http://127.0.0.1:8887"
     else
         echo "Failed to start Docker container."
     fi
