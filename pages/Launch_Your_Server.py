@@ -12,7 +12,7 @@ with st.sidebar:
 def read_output(process, output):
     for line in iter(process.stdout.readline, b''):
         output.append(line)
-
+@st.cache
 def launch():
         process = subprocess.Popen('./run_docker.sh', shell=True, executable="/bin/bash", stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, bufsize=1, universal_newlines=True)
 
