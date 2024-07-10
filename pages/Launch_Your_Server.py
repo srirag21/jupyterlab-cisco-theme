@@ -1,7 +1,6 @@
 import subprocess
 import streamlit as st
 import time
-import streamlit_scrollable_textbox as stx
 
 cisco_logo = "cisco2.png"
 
