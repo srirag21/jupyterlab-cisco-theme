@@ -1,0 +1,70 @@
+Checking for containers using port 8887...
+Stopping and removing the following containers:
+2bbb9a9a62af
+2bbb9a9a62af
+2bbb9a9a62af
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  868.4kB
+Step 1/18 : FROM continuumio/miniconda3
+ ---> 715691c89b35
+Step 2/18 : LABEL maintainer="Srinidhi Raghavendran srirag@cisco.com"
+ ---> Using cache
+ ---> e9e83b1660d0
+Step 3/18 : ARG http_proxy
+ ---> Using cache
+ ---> 042a9e06af18
+Step 4/18 : ARG https_proxy
+ ---> Using cache
+ ---> 1ea4ad5fbb98
+Step 5/18 : ENV http_proxy=${http_proxy}
+ ---> Using cache
+ ---> 84384c5db209
+Step 6/18 : ENV https_proxy=${https_proxy}
+ ---> Using cache
+ ---> 2d3e093a2660
+Step 7/18 : RUN apt-get update && apt-get install -y curl
+ ---> Using cache
+ ---> b2d52b4cf87a
+Step 8/18 : COPY environment.yml /app/environment.yml
+ ---> Using cache
+ ---> 42fb6df4b6aa
+Step 9/18 : WORKDIR /app
+ ---> Using cache
+ ---> 141fbcc87809
+Step 10/18 : RUN conda env create -f environment.yml
+ ---> Using cache
+ ---> 922ec9cce0d9
+Step 11/18 : RUN echo "source activate jupyterlab_env" > ~/.bashrc
+ ---> Using cache
+ ---> 0d4bfaba25ac
+Step 12/18 : RUN /bin/bash -c "source activate jupyterlab_env && pip install -i https://test.pypi.org/simple/ cisco-theme-jupyter==1.0.1"
+ ---> Using cache
+ ---> 3efee8fb2c39
+Step 13/18 : COPY overrides.json /app/overrides.json
+ ---> Using cache
+ ---> fb22fa4f2de9
+Step 14/18 : RUN mkdir -p /opt/conda/envs/jupyterlab_env/share/jupyter/lab/settings     && cp /app/overrides.json /opt/conda/envs/jupyterlab_env/share/jupyter/lab/settings/overrides.json
+ ---> Using cache
+ ---> 59a80368df05
+Step 15/18 : COPY . /app/
+ ---> 039cddd6c041
+Step 16/18 : RUN echo 'source /opt/conda/etc/profile.d/conda.sh' >> ~/.bashrc     && echo 'conda activate jupyterlab_env' >> ~/.bashrc
+ ---> Running in 9e6ecb0a7ae3
+Removing intermediate container 9e6ecb0a7ae3
+ ---> 917a9524cf04
+Step 17/18 : EXPOSE 8887
+ ---> Running in af1c9bbb0ad4
+Removing intermediate container af1c9bbb0ad4
+ ---> 60a7542ab8d3
+Step 18/18 : ENTRYPOINT ["/bin/bash", "-c", "source /opt/conda/etc/profile.d/conda.sh && conda activate jupyterlab_env && exec jupyter lab --ip=0.0.0.0 --port=8887 --allow-root --ServerApp.token='' --ServerApp.allow_origin='*' --ServerApp.allow_remote_access=True"]
+ ---> Running in 37135a8bafbb
+Removing intermediate container 37135a8bafbb
+ ---> 29edc680de32
+Successfully built 29edc680de32
+Successfully tagged cisco_theme_jupyter:latest
+Docker image built successfully.
+Docker container started successfully.
+You can access your environment at http://127.0.0.1:8887
