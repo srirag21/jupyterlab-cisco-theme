@@ -2,17 +2,17 @@ import streamlit as st
 import subprocess
 from pages import Launch_Your_Server
 
-from st_pages import Page, show_pages, add_page_title
+# from st_pages import Page, show_pages, add_page_title
 
-add_page_title()
+# add_page_title()
 
 
-show_pages(
-    [
-        Page("Welcome.py", "Home", "🏠"),
-        Page("pages/Launch_Your_Server.py", "Launch Your Server", ":books:"),
-    ]
-)
+# show_pages(
+#     [
+#         Page("Welcome.py", "Home", "🏠"),
+#         Page("pages/Launch_Your_Server.py", "Launch Your Server", ":books:"),
+#     ]
+# )
 
 # Load Cisco logo image
 cisco_logo = "cisco2.png"
