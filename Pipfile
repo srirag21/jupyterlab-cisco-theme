@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 st-pages = "*"
+streamlit = "*"
 
 [dev-packages]
 
