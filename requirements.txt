@@ -1,2 +1,2 @@
-bcrypt==3.2.0
 streamlit-authenticator==0.3.2
+streamlit-scrollable-textbox
