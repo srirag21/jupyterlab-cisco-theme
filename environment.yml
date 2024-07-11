@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - pydantic-settings
-  - python=3.12
+  - python
   - nodejs=20
   - jupyterlab
   - pip
