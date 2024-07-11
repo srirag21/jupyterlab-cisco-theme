@@ -15,7 +15,7 @@ usernames = ["dodge", "jeep"]
 
 with open('config.yml') as file:
     config = yaml.load(file, Loader=SafeLoader)
-authenticator = stauth.Authenticate(
+    authenticator = stauth.Authenticate(
     config['credentials'],
     config['cookie']['name'],
     config['cookie']['key'],
@@ -98,7 +98,7 @@ def update_config_file():
 authenticator.login()
 
 
-cols = st.columns(3)
+# cols = st.columns(3)
 # with cols[0]:
 #     if authenticator.reset_password(st.session_state["username"]):
 #         reset_password()
