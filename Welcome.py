@@ -4,10 +4,11 @@ from pages import Launch_Your_Server
 import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
-import pickle 
-from pathlib import Path
 
 cisco_logo = "cisco2.png"
+
+with st.sidebar:
+    st.image(cisco_logo, use_column_width=True)
 
 names = ["Dodge Demon", "Jeep Trackhawk"]
 usernames = ["dodge", "jeep"]
@@ -98,12 +99,12 @@ authenticator.login()
 
 
 cols = st.columns(3)
-with cols[0]:
-    if authenticator.reset_password(username, 'Reset password'):
-        reset_password()
-with cols[1]:
-    if st.button("Forgot Username"):
-        reset_username()
-with cols[2]:
-    if st.button("Register New Account"):
-        register_user()
+# with cols[0]:
+#     if authenticator.reset_password(st.session_state["username"]):
+#         reset_password()
+# with cols[1]:
+#     if st.button("Forgot Username"):
+#         reset_username()
+# with cols[2]:
+#     if st.button("Register New Account"):
+#         register_user()

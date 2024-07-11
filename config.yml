@@ -6,7 +6,7 @@ credentials:
       username: dodge
       failed_login_attempts: 0 
       logged_in: true
-      password: abc
+      password: srt
     jeep:
       email: hdhaneku@cisco.com
       name: Jeep Trackhawk
