@@ -1,0 +1,21 @@
+credentials:
+  usernames:
+    dodge:
+      email: srirag@cisco.com
+      name: Dodge Demon
+      username: dodge
+      failed_login_attempts: 0 
+      logged_in: true
+      password: abc
+    jeep:
+      email: hdhaneku@cisco.com
+      name: Jeep Trackhawk
+      username: jeep
+      password: def
+cookie:
+  expiry_days: 30
+  key: 'baller21' # Must be string
+  name: iloveicecream
+preauthorized:
+  emails:
+  - melsby@gmail.com
