@@ -60,7 +60,7 @@ if st.session_state["authentication_status"]:
                 if process.returncode == 0:
                         progress_bar.progress(100) 
                         st.success('Server started successfully!')
-                        st.link_button("Click Here", "http://127.0.0.1:8000/hub")
+                        st.link_button("Click Here", "http://100.20.56.193:87")
                 else:
                         stderr = process.stderr.read()
                         st.error('Server failed to start')
