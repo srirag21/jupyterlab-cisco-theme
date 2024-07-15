@@ -26,7 +26,7 @@ if [ $? -eq 0 ]; then
     NOTEBOOKS_DIR=$(pwd)/notebooks
     mkdir -p $NOTEBOOKS_DIR
 
-    container_id=$(docker run -d -p 8000:8000 -v $NOTEBOOKS_DIR:/app/notebooks cisco_theme_jupyter)
+    container_id=$(docker run -d -p 80:8000 -v $NOTEBOOKS_DIR:/app/notebooks cisco_theme_jupyter)
 
     if [ $? -eq 0 ]; then
         echo "Docker container started successfully."

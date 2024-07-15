@@ -59,4 +59,5 @@ EXPOSE 8000
 
 ENTRYPOINT ["/bin/bash", "-c", "unset http_proxy && unset https_proxy && source /opt/conda/etc/profile.d/conda.sh && \
     source activate jupyterlab_env && \
-    exec jupyterhub -f /etc/jupyterhub/jupyterhub_config.py --ip=0.0.0.0 --port=8000 --no-ssl"]
+    exec jupyterhub -f /etc/jupyterhub/jupyterhub_config.py --ip=0.0.0.0 --port=8000 --no-ssl\
+    >> /var/log/jupyterhub.log 2>&1"]
