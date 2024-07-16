@@ -18,7 +18,7 @@ c = get_config()  # noqa
 ## Set the log level by value or name.
 #  Choices: any of [0, 10, 20, 30, 40, 50, 'DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL']
 #  Default: 30
-# c.Application.log_level = 30
+c.Application.log_level = 'DEBUG'
 
 ## Configure additional log handlers.
 #  
@@ -192,7 +192,7 @@ c.JupyterHub.authenticator_class = 'nativeauthenticator.NativeAuthenticator'
 #          This is the address on which the proxy will bind.
 #          Sets protocol, ip, base_url
 #  Default: 'http://:8000'
-c.JupyterHub.bind_url = 'http://100.20.56.193:8887'
+c.JupyterHub.bind_url = 'http://0.0.0.0:8887'
 
 ## Whether to shutdown the proxy when the Hub shuts down.
 #  
@@ -240,7 +240,7 @@ c.JupyterHub.bind_url = 'http://100.20.56.193:8887'
 
 ## The config file to load
 #  Default: 'jupyterhub_config.py'
-# c.JupyterHub.config_file = 'jupyterhub_config.py'
+c.JupyterHub.config_file = 'jupyterhub_config.py'
 
 ## DEPRECATED: does nothing
 #  Default: False
@@ -406,7 +406,7 @@ c.JupyterHub.bind_url = 'http://100.20.56.193:8887'
 #  
 #          .. versionadded:: 0.8
 #  Default: ''
-# c.JupyterHub.hub_connect_ip = ''
+c.JupyterHub.hub_connect_ip = '0.0.0.0'
 
 ## DEPRECATED
 #  
@@ -417,7 +417,7 @@ c.JupyterHub.bind_url = 'http://100.20.56.193:8887'
 #  .. deprecated:: 0.9
 #      Use hub_connect_url
 #  Default: 0
-# c.JupyterHub.hub_connect_port = 0
+c.JupyterHub.hub_connect_port = 8081
 
 ## The URL for connecting to the Hub. Spawners, services, and the proxy will use
 #  this URL to talk to the Hub.
@@ -442,7 +442,7 @@ c.JupyterHub.bind_url = 'http://100.20.56.193:8887'
 #          See `hub_connect_ip` for cases where the bind and connect address should differ,
 #          or `hub_bind_url` for setting the full bind URL.
 #  Default: '127.0.0.1'
-c.JupyterHub.hub_ip = "100.20.56.193"
+c.JupyterHub.hub_ip = "0.0.0.0"
 
 ## The internal port for the Hub process.
 #  
