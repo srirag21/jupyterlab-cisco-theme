@@ -7,7 +7,7 @@ ARG https_proxy
 
 ENV http_proxy=${http_proxy}
 ENV https_proxy=${https_proxy}
-ENV JUPYTERHUB_IP=100.20.56.193
+ENV JUPYTERHUB_IP=0.0.0.0
 ENV JUPYTERHUB_PORT=8887
 
 RUN apt-get update && apt-get install -y curl
@@ -24,7 +24,7 @@ COPY environment.yml /app/environment.yml
 WORKDIR /app
 
 RUN conda env create -f environment.yml
-RUN echo "source activate jupyterlab_env" > ~/.bashrc
+RUN echo "source activate jupyterlab_env" >> ~/.bashrc
 
 RUN /bin/bash -c "source activate jupyterlab_env && \
     pip install jupyterhub notebook"
@@ -46,7 +46,6 @@ COPY . /app/
 
 EXPOSE 8887
 
-ENTRYPOINT ["/bin/bash", "-c", "unset http_proxy && unset https_proxy && source /opt/conda/etc/profile.d/conda.sh && \
-    source activate jupyterlab_env && \
-    exec jupyterhub -f /etc/jupyterhub/jupyterhub_config.py \
-    >> /var/log/jupyterhub.log 2>&1"]
+CMD ["/bin/bash", "-c", "unset http_proxy && unset https_proxy && source /opt/conda/etc/profile.d/conda.sh && \
+    conda activate jupyterlab_env && \
+    exec jupyterhub -f /etc/jupyterhub/jupyterhub_config.py"]
