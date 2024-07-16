@@ -431,7 +431,7 @@ c.JupyterHub.hub_connect_ip = '0.0.0.0'
 #  
 #  .. versionadded:: 0.9
 #  Default: ''
-c.JupyterHub.hub_connect_url = 'http://100.20.56.193:8887'
+c.JupyterHub.hub_connect_url = 'http://0.0.0.0:8887'
 
 ## The ip address for the Hub process to *bind* to.
 #  
@@ -674,7 +674,7 @@ c.JupyterHub.hub_ip = "0.0.0.0"
 #    - configurable-http-proxy: jupyterhub.proxy.ConfigurableHTTPProxy
 #    - default: jupyterhub.proxy.ConfigurableHTTPProxy
 #  Default: 'jupyterhub.proxy.ConfigurableHTTPProxy'
-# c.JupyterHub.proxy_class = 'jupyterhub.proxy.ConfigurableHTTPProxy'
+c.JupyterHub.proxy_class = 'jupyterhub.proxy.ConfigurableHTTPProxy'
 
 ## DEPRECATED since version 0.8. Use ConfigurableHTTPProxy.command
 #  Default: []
