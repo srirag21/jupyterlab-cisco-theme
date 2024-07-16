@@ -7,6 +7,8 @@ ARG https_proxy
 
 ENV http_proxy=${http_proxy}
 ENV https_proxy=${https_proxy}
+ENV JUPYTERHUB_IP=0.0.0.0
+ENV JUPYTERHUB_PORT=8887
 
 RUN apt-get update && apt-get install -y curl
 
@@ -34,23 +36,7 @@ RUN git clone https://github.com/jupyterhub/nativeauthenticator.git /home/native
 RUN /bin/bash -c "source activate jupyterlab_env && \
     pip install -e /home/nativeauthenticator"
 
-
-RUN mkdir /etc/jupyterhub && \
-/bin/bash -c "source activate jupyterlab_env && \
-jupyterhub --generate-config -f /etc/jupyterhub/jupyterhub_config.py"
-RUN echo 'import pwd, subprocess\n\
-c.JupyterHub.authenticator_class = "nativeauthenticator.NativeAuthenticator"\n\
-c.Authenticator.admin_users = {"admin"}\n\
-c.Authenticator.allow_all = True\n\
-c.JupyterHub.port = 8887\n\
-c.JupyterHub.bind_url = "http://:8887"\n\
-def pre_spawn_hook(spawner):\n\
-    username = spawner.user.name\n\
-    try: pwd.getpwnam(username)\n\
-    except KeyError: subprocess.check_call(["useradd", "-ms", "/bin/bash", username])\n\
-c.Spawner.pre_spawn_hook = pre_spawn_hook\n\
-c.Spawner.default_url = "/lab"\n' \
->> /etc/jupyterhub/jupyterhub_config.py
+COPY jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
 
 COPY overrides.json /app/overrides.json
 RUN mkdir -p /opt/conda/envs/jupyterlab_env/share/jupyter/lab/settings \
@@ -62,5 +48,5 @@ EXPOSE 8887
 
 ENTRYPOINT ["/bin/bash", "-c", "unset http_proxy && unset https_proxy && source /opt/conda/etc/profile.d/conda.sh && \
     source activate jupyterlab_env && \
-    exec jupyterhub -f /etc/jupyterhub/jupyterhub_config.py --ip=0.0.0.0 --port=8887 --no-ssl\
+    exec jupyterhub -f /etc/jupyterhub/jupyterhub_config.py \
     >> /var/log/jupyterhub.log 2>&1"]
