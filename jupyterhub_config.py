@@ -240,7 +240,7 @@ c.JupyterHub.bind_url = 'http://0.0.0.0:8887'
 
 ## The config file to load
 #  Default: 'jupyterhub_config.py'
-c.JupyterHub.config_file = 'jupyterhub_config.py'
+# c.JupyterHub.config_file = 'jupyterhub_config.py'
 
 ## DEPRECATED: does nothing
 #  Default: False
@@ -417,7 +417,7 @@ c.JupyterHub.hub_connect_ip = '0.0.0.0'
 #  .. deprecated:: 0.9
 #      Use hub_connect_url
 #  Default: 0
-c.JupyterHub.hub_connect_port = 8081
+# c.JupyterHub.hub_connect_port = 8081
 
 ## The URL for connecting to the Hub. Spawners, services, and the proxy will use
 #  this URL to talk to the Hub.
@@ -431,7 +431,7 @@ c.JupyterHub.hub_connect_port = 8081
 #  
 #  .. versionadded:: 0.9
 #  Default: ''
-# c.JupyterHub.hub_connect_url = ''
+c.JupyterHub.hub_connect_url = 'http://100.20.56.193:8887'
 
 ## The ip address for the Hub process to *bind* to.
 #  
@@ -644,7 +644,7 @@ c.JupyterHub.hub_ip = "0.0.0.0"
 #          .. deprecated: 0.9
 #              Use JupyterHub.bind_url
 #  Default: 8000
-c.JupyterHub.port = 8887
+# c.JupyterHub.port = 8887
 
 ## DEPRECATED since version 0.8 : Use ConfigurableHTTPProxy.api_url
 #  Default: ''
