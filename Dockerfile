@@ -8,7 +8,7 @@ ARG https_proxy
 ENV http_proxy=${http_proxy}
 ENV https_proxy=${https_proxy}
 ENV JUPYTERHUB_IP=0.0.0.0
-ENV JUPYTERHUB_PORT=8887
+ENV JUPYTERHUB_PORT=8888
 
 RUN apt-get update && apt-get install -y curl
 
@@ -44,7 +44,7 @@ RUN mkdir -p /opt/conda/envs/jupyterlab_env/share/jupyter/lab/settings \
 
 COPY . /app/
 
-EXPOSE 8887
+EXPOSE 8888
 
 CMD ["/bin/bash", "-c", "unset http_proxy && unset https_proxy && source /opt/conda/etc/profile.d/conda.sh && \
     conda activate jupyterlab_env && \
