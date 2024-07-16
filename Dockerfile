@@ -46,6 +46,7 @@ COPY . /app/
 
 EXPOSE 8888
 
-CMD ["/bin/bash", "-c", "unset http_proxy && unset https_proxy && source /opt/conda/etc/profile.d/conda.sh && \
-    conda activate jupyterlab_env && \
-    exec jupyterhub -f /etc/jupyterhub/jupyterhub_config.py"]
+# CMD ["/bin/bash", "-c", "unset http_proxy && unset https_proxy && source /opt/conda/etc/profile.d/conda.sh && \
+#     conda activate jupyterlab_env && \
+#     exec jupyterhub -f /etc/jupyterhub/jupyterhub_config.py"]
+CMD ["jupyterhub", "-f", "/etc/jupyterhub/jupyterhub_config.py"]

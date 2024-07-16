@@ -584,7 +584,7 @@ c.JupyterHub.hub_ip = "0.0.0.0"
 
 ## Set the log level by value or name.
 #  See also: Application.log_level
-# c.JupyterHub.log_level = 30
+c.JupyterHub.log_level = 'DEBUG'
 
 ## 
 #  See also: Application.logging_config
@@ -980,7 +980,7 @@ c.JupyterHub.proxy_class = 'jupyterhub.proxy.ConfigurableHTTPProxy'
 
 ## Enable debug-logging of the single-user server
 #  Default: False
-# c.Spawner.debug = False
+c.Spawner.debug = True
 
 ## The URL the single-user server should start in.
 #  
