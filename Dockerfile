@@ -2,11 +2,11 @@ FROM continuumio/miniconda3
 
 LABEL maintainer="Srinidhi Raghavendran srirag@cisco.com"
 
-# ARG http_proxy
-# ARG https_proxy
+ARG http_proxy
+ARG https_proxy
 
-# ENV http_proxy=${http_proxy}
-# ENV https_proxy=${https_proxy}
+ENV http_proxy=${http_proxy}
+ENV https_proxy=${https_proxy}
 ENV JUPYTERHUB_IP=0.0.0.0
 ENV JUPYTERHUB_PORT=8000
 
