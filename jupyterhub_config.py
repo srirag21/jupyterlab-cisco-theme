@@ -674,7 +674,7 @@ c.JupyterHub.log_level = 'DEBUG'
 #    - configurable-http-proxy: jupyterhub.proxy.ConfigurableHTTPProxy
 #    - default: jupyterhub.proxy.ConfigurableHTTPProxy
 #  Default: 'jupyterhub.proxy.ConfigurableHTTPProxy'
-c.JupyterHub.proxy_class = 'jupyterhub.proxy.ConfigurableHTTPProxy'
+# c.JupyterHub.proxy_class = 'jupyterhub.proxy.ConfigurableHTTPProxy'
 
 ## DEPRECATED since version 0.8. Use ConfigurableHTTPProxy.command
 #  Default: []
