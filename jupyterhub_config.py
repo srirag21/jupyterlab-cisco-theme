@@ -406,7 +406,7 @@ c.JupyterHub.hub_bind_url = 'http://10.10.3.87:87'
 #  
 #          .. versionadded:: 0.8
 #  Default: ''
-c.JupyterHub.hub_connect_ip = '100.20.56.193'
+c.JupyterHub.hub_connect_ip = '10.10.3.87'
 
 ## DEPRECATED
 #  
@@ -431,7 +431,7 @@ c.JupyterHub.hub_connect_ip = '100.20.56.193'
 #  
 #  .. versionadded:: 0.9
 #  Default: ''
-c.JupyterHub.hub_connect_url = 'http://100.20.56.193:87'
+c.JupyterHub.hub_connect_url = 'http://10.10.3.87:87'
 
 ## The ip address for the Hub process to *bind* to.
 #  
@@ -442,7 +442,7 @@ c.JupyterHub.hub_connect_url = 'http://100.20.56.193:87'
 #          See `hub_connect_ip` for cases where the bind and connect address should differ,
 #          or `hub_bind_url` for setting the full bind URL.
 #  Default: '127.0.0.1'
-c.JupyterHub.hub_ip = "100.20.56.193"
+c.JupyterHub.hub_ip = "10.10.3.87"
 
 ## The internal port for the Hub process.
 #  
@@ -674,7 +674,7 @@ c.JupyterHub.log_level = 'DEBUG'
 #    - configurable-http-proxy: jupyterhub.proxy.ConfigurableHTTPProxy
 #    - default: jupyterhub.proxy.ConfigurableHTTPProxy
 #  Default: 'jupyterhub.proxy.ConfigurableHTTPProxy'
-# c.JupyterHub.proxy_class = 'jupyterhub.proxy.ConfigurableHTTPProxy'
+c.JupyterHub.proxy_class = 'jupyterhub.proxy.ConfigurableHTTPProxy'
 
 ## DEPRECATED since version 0.8. Use ConfigurableHTTPProxy.command
 #  Default: []
@@ -1072,7 +1072,7 @@ c.Spawner.debug = True
 #      as '' was interpreted as 'unspecified',
 #      which used the subprocesses' own default, itself usually '127.0.0.1'.
 #  Default: '127.0.0.1'
-c.Spawner.ip = '100.20.56.193'
+c.Spawner.ip = '10.10.3.87'
 
 ## Minimum number of bytes a single-user notebook server is guaranteed to have
 #  available.
