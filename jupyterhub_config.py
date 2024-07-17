@@ -1491,3 +1491,5 @@ c.Authenticator.admin_users = {"admin"}
 ## The number of threads to allocate for encryption
 #  Default: 12
 # c.CryptKeeper.n_threads = 12
+
+c.Authenticator.allow_all = True
