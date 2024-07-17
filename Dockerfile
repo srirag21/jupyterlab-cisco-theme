@@ -7,7 +7,7 @@ ARG https_proxy
 
 ENV http_proxy=${http_proxy}
 ENV https_proxy=${https_proxy}
-ENV JUPYTERHUB_IP=100.0.0.0
+ENV JUPYTERHUB_IP=100.20.56.193
 ENV JUPYTERHUB_PORT=87
 
 RUN apt-get update && apt-get install -y curl
