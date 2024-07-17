@@ -192,7 +192,7 @@ c.JupyterHub.authenticator_class = 'nativeauthenticator.NativeAuthenticator'
 #          This is the address on which the proxy will bind.
 #          Sets protocol, ip, base_url
 #  Default: 'http://:8000'
-c.JupyterHub.bind_url = 'http://0.0.0.0:87'
+c.JupyterHub.bind_url = 'http://172.18.0.100:87'
 
 ## Whether to shutdown the proxy when the Hub shuts down.
 #  
@@ -390,7 +390,7 @@ c.JupyterHub.bind_url = 'http://0.0.0.0:87'
 #  
 #  .. versionadded:: 0.9
 #  Default: ''
-c.JupyterHub.hub_bind_url = 'http://0.0.0.0:87'
+c.JupyterHub.hub_bind_url = 'http://172.18.0.100:87'
 
 ## The ip or hostname for proxies and spawners to use
 #          for connecting to the Hub.
@@ -406,7 +406,7 @@ c.JupyterHub.hub_bind_url = 'http://0.0.0.0:87'
 #  
 #          .. versionadded:: 0.8
 #  Default: ''
-c.JupyterHub.hub_connect_ip = '0.0.0.0'
+c.JupyterHub.hub_connect_ip = '172.18.0.100'
 
 ## DEPRECATED
 #  
@@ -431,7 +431,7 @@ c.JupyterHub.hub_connect_ip = '0.0.0.0'
 #  
 #  .. versionadded:: 0.9
 #  Default: ''
-c.JupyterHub.hub_connect_url = 'http://0.0.0.0:87'
+c.JupyterHub.hub_connect_url = 'http://172.18.0.100:87'
 
 ## The ip address for the Hub process to *bind* to.
 #  
@@ -442,7 +442,7 @@ c.JupyterHub.hub_connect_url = 'http://0.0.0.0:87'
 #          See `hub_connect_ip` for cases where the bind and connect address should differ,
 #          or `hub_bind_url` for setting the full bind URL.
 #  Default: '127.0.0.1'
-c.JupyterHub.hub_ip = "0.0.0.0"
+c.JupyterHub.hub_ip = "172.18.0.100"
 
 ## The internal port for the Hub process.
 #  
@@ -1072,7 +1072,7 @@ c.Spawner.debug = True
 #      as '' was interpreted as 'unspecified',
 #      which used the subprocesses' own default, itself usually '127.0.0.1'.
 #  Default: '127.0.0.1'
-c.Spawner.ip = '0.0.0.0'
+c.Spawner.ip = '172.18.0.100'
 
 ## Minimum number of bytes a single-user notebook server is guaranteed to have
 #  available.
