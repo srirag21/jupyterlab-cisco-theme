@@ -390,7 +390,7 @@ c.JupyterHub.bind_url = 'http://100.20.56.193:87'
 #  
 #  .. versionadded:: 0.9
 #  Default: ''
-c.JupyterHub.hub_bind_url = 'http://100.0.0.0:87'
+c.JupyterHub.hub_bind_url = 'http://10.10.3.87:87'
 
 ## The ip or hostname for proxies and spawners to use
 #          for connecting to the Hub.
@@ -406,7 +406,7 @@ c.JupyterHub.hub_bind_url = 'http://100.0.0.0:87'
 #  
 #          .. versionadded:: 0.8
 #  Default: ''
-c.JupyterHub.hub_connect_ip = '100.0.0.0'
+c.JupyterHub.hub_connect_ip = '100.20.56.193'
 
 ## DEPRECATED
 #  
@@ -431,7 +431,7 @@ c.JupyterHub.hub_connect_ip = '100.0.0.0'
 #  
 #  .. versionadded:: 0.9
 #  Default: ''
-c.JupyterHub.hub_connect_url = 'http://100.0.0.0:87'
+c.JupyterHub.hub_connect_url = 'http://100.20.56.193:87'
 
 ## The ip address for the Hub process to *bind* to.
 #  
@@ -442,7 +442,7 @@ c.JupyterHub.hub_connect_url = 'http://100.0.0.0:87'
 #          See `hub_connect_ip` for cases where the bind and connect address should differ,
 #          or `hub_bind_url` for setting the full bind URL.
 #  Default: '127.0.0.1'
-c.JupyterHub.hub_ip = "100.0.0.0"
+c.JupyterHub.hub_ip = "100.20.56.193"
 
 ## The internal port for the Hub process.
 #  
