@@ -192,7 +192,7 @@ c.JupyterHub.authenticator_class = 'nativeauthenticator.NativeAuthenticator'
 #          This is the address on which the proxy will bind.
 #          Sets protocol, ip, base_url
 #  Default: 'http://:8000'
-c.JupyterHub.bind_url = 'http://100.20.56.193:87'
+c.JupyterHub.bind_url = 'http://10.10.3.87:87'
 
 ## Whether to shutdown the proxy when the Hub shuts down.
 #  
