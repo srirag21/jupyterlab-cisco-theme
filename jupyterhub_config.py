@@ -442,7 +442,7 @@ c.JupyterHub.authenticator_class = 'nativeauthenticator.NativeAuthenticator'
 #          See `hub_connect_ip` for cases where the bind and connect address should differ,
 #          or `hub_bind_url` for setting the full bind URL.
 #  Default: '127.0.0.1'
-# c.JupyterHub.hub_ip = "0.0.0.0"
+c.JupyterHub.hub_ip = "0.0.0.0"
 
 ## The internal port for the Hub process.
 #  
