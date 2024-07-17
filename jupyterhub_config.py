@@ -1251,6 +1251,7 @@ c.Spawner.debug = True
 #  
 #      c.Spawner.pre_spawn_hook = my_hook
 #  Default: None
+import pwd, subprocess
 def pre_spawn_hook(spawner):
     username = spawner.user.name
     try:
