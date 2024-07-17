@@ -7,8 +7,8 @@ ARG https_proxy
 
 ENV http_proxy=${http_proxy}
 ENV https_proxy=${https_proxy}
-ENV JUPYTERHUB_IP=172.18.0.100
-ENV JUPYTERHUB_PORT=87
+ENV JUPYTERHUB_IP=0.0.0.0
+ENV JUPYTERHUB_PORT=8000
 
 RUN apt-get update && apt-get install -y curl
 
@@ -44,6 +44,6 @@ RUN mkdir -p /opt/conda/envs/jupyterlab_env/share/jupyter/lab/settings \
 
 COPY . /app/
 
-EXPOSE 87
+EXPOSE 8000
 
 CMD ["/bin/bash", "-c", "source /opt/conda/etc/profile.d/conda.sh && conda activate jupyterlab_env && exec jupyterhub -f /etc/jupyterhub/jupyterhub_config.py"]
