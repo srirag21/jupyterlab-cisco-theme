@@ -16,14 +16,17 @@ import { ILauncher } from '@jupyterlab/launcher';
 
 import { LabIcon } from '@jupyterlab/ui-components';
 
+import { Widget } from '@lumino/widgets';
+
 import '../style/index.css';
-import ciscoIcon from '../cisco2.png'
+import ciscoIcon from '../cisco.svg';
 
 /**
 * Activate the Cisco theme extension.
 */
 function activate(app: JupyterFrontEnd, themeManager: IThemeManager, browserFactory: IFileBrowserFactory, launcher: ILauncher | null, palette: ICommandPalette | null) {
   console.log('JupyterLab extension cisco_theme_jupyter is activated!');
+  console.log('Cisco SVG Icon:', ciscoIcon);
 
   const style = 'cisco_theme_jupyter/index.css';
   themeManager.register({
@@ -32,35 +35,50 @@ function activate(app: JupyterFrontEnd, themeManager: IThemeManager, browserFact
     load: () => themeManager.loadCSS(style),
     unload: () => Promise.resolve(undefined)
   });
-  const commands = [
-    {
-      id: 'example:open-ai',
-      label: 'Cisco AI',
-      url: 'https://developer.cisco.com/site/ai/'
-    },
-    {
-      id: 'example:open-crosswork',
-      label: 'Cisco Crosswork Automation',
-      url: 'https://community.cisco.com/t5/crosswork-automation-hub/ct-p/5672j-dev-nso'
-    },
-    {
-      id: 'example:open-nso',
-      label: 'Cisco NSO',
-      url: 'https://developer.cisco.com/site/nso/'
-    }
-  ];
+
+  const topWidget = new Widget();
+  topWidget.id = 'cisco-automation-notebooks';
+  topWidget.node.textContent = 'Cisco Automation Notebooks';
+  topWidget.addClass('cisco-top-widget');
+  app.shell.add(topWidget, 'top', { rank: 1000 });
+
   const icon = new LabIcon({
     name: 'custom:ciscoIcon',
     svgstr: ciscoIcon
   });
+
+  const commands = [
+    {
+      id: 'example:open-ai',
+      label: 'Cisco AI',
+      icon: icon,
+      execute: () => {
+        window.open('https://developer.cisco.com/site/ai/', '_blank');
+      }
+    },
+    {
+      id: 'example:open-crosswork',
+      label: 'Cisco Crosswork Automation',
+      icon: icon,
+      execute: () => {
+        window.open('https://community.cisco.com/t5/crosswork-automation-hub/ct-p/5672j-dev-nso', '_blank');
+      }
+    },
+    {
+      id: 'example:open-nso',
+      label: 'Cisco NSO',
+      icon: icon,
+      execute: () => {
+        window.open('https://developer.cisco.com/site/nso/', '_blank');
+      }
+    }
+  ];
+
   commands.forEach(cmd => {
     app.commands.addCommand(cmd.id, {
       label: cmd.label,
-      caption: cmd.label,
-      icon: icon,
-      execute: () => {
-        window.open(cmd.url, '_blank');
-      }
+      icon: cmd.icon,
+      execute: cmd.execute
     });
 
     if (launcher) {
@@ -75,7 +93,6 @@ function activate(app: JupyterFrontEnd, themeManager: IThemeManager, browserFact
       palette.addItem({ command: cmd.id, category: 'Cisco Modules' });
     }
   });
-  
 }
 
 /**

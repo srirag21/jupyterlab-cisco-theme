@@ -36,3 +36,13 @@ pre {
   background: url('../cisco.png') no-repeat center center;
   background-size: contain;
 }
+
+.cisco-top-widget {
+  margin-top: 4px;
+  margin-right: 15px;
+  font-weight: bold;
+  position: absolute;
+  right: 2%;
+  top: 1%; 
+  z-index: 10;
+}
