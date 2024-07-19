@@ -29,7 +29,7 @@ RUN echo "source activate jupyterlab_env" >> ~/.bashrc
 RUN /bin/bash -c "source activate jupyterlab_env && \
     pip install jupyterhub notebook"
 
-RUN /bin/bash -c "source activate jupyterlab_env && pip install -i https://test.pypi.org/simple/ cisco-theme-jupyter==1.0.1"
+RUN /bin/bash -c "source activate jupyterlab_env && pip install -i https://test.pypi.org/simple/ cisco-theme-jupyter==1.1.0"
 RUN /bin/bash -c "source activate jupyterlab_env && \
     conda install -c conda-forge jupyterhub notebook jupyterlab"
 RUN git clone https://github.com/jupyterhub/nativeauthenticator.git /home/nativeauthenticator
