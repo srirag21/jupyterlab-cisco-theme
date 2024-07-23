@@ -1,6 +1,13 @@
+import sys
+import os
+parent_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(1, parent_dir)
+sys.path.insert(1, os.path.join(parent_dir, 'pages'))
+
+from Launch_Your_Server import *
 import streamlit as st
 import subprocess
-from .pages.Launch_Your_Server import *
+from Launch_Your_Server import *
 import streamlit_scrollable_textbox as stx
 import streamlit_authenticator as stauth
 import yaml
