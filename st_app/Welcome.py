@@ -18,8 +18,8 @@ cisco_logo = "cisco2.png"
 with st.sidebar:
     st.image(cisco_logo, use_column_width=True)
 
-names = ["Dodge Demon", "Jeep Trackhawk"]
-usernames = ["dodge", "jeep"]
+names = ["Dodge Demon", "Jeep Trackhawk", "Cisco User"]
+usernames = ["dodge", "jeep", "cisco"]
 
 with open('config.yml') as file:
     config = yaml.load(file, Loader=SafeLoader)
@@ -29,7 +29,6 @@ with open('config.yml') as file:
     config['cookie']['key'],
     config['cookie']['expiry_days'],
     config['preauthorized'], 
-    key = "key123"
 )
 
 if st.session_state["authentication_status"]:
