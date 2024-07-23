@@ -1,6 +1,6 @@
 import streamlit as st
 import subprocess
-from pages import Launch_Your_Server
+from .pages.Launch_Your_Server import *
 import streamlit_scrollable_textbox as stx
 import streamlit_authenticator as stauth
 import yaml
