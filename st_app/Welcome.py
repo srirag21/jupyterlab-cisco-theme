@@ -27,8 +27,7 @@ with open('config.yml') as file:
     config['credentials'],
     config['cookie']['name'],
     config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['preauthorized'], 
+    config['cookie']['expiry_days']
 )
 
 if st.session_state["authentication_status"]:
