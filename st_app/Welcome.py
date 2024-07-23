@@ -28,7 +28,8 @@ with open('config.yml') as file:
     config['cookie']['name'],
     config['cookie']['key'],
     config['cookie']['expiry_days'],
-    config['preauthorized']
+    config['preauthorized'], 
+    key = "key123"
 )
 
 if st.session_state["authentication_status"]:
