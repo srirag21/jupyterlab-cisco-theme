@@ -12,10 +12,12 @@ credentials:
       name: Jeep Trackhawk
       username: jeep
       password: def
+    cisco:
+      email: srirag@cisco.com
+      name: Cisco User
+      username: cisco
+      password: cisco
 cookie:
   expiry_days: 30
   key: 'baller21' # Must be string
   name: iloveicecream
-preauthorized:
-  emails:
-  - melsby@gmail.com
