@@ -11,8 +11,8 @@ cisco_logo = "cisco2.png"
 with st.sidebar:
     st.image(cisco_logo, use_column_width=True)
 
-names = ["Dodge Demon", "Jeep Trackhawk"]
-usernames = ["dodge", "jeep"]
+names = ["Dodge Demon", "Jeep Trackhawk", "Cisco User"]
+usernames = ["dodge", "jeep", "cisco"]
 
 with open('config.yml') as file:
     config = yaml.load(file, Loader=SafeLoader)
